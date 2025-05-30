@@ -5,7 +5,7 @@ exports.searchUserController = async (req, res) => {
 
     try {
         const user = await User.findOne({
-            attributes: ['id', 'username', 'login', 'active'],
+            attributes: ['id', 'username', 'loginUser', 'active'],
             where: { id: id }
         });
 

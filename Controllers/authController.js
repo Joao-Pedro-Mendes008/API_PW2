@@ -39,6 +39,7 @@ exports.register = async (req, res) => {
         );
 
         console.log(username, loginUser, password);
+        console.log("TESTE")
 
         res.status(201).json({ message: 'Usuário criado com sucesso', user })
     } catch (error) {
