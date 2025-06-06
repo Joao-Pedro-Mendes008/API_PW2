@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../Config/config');
+const { Op } = require('sequelize');
 const User = require('./userModel');
 
 const Task = sequelize.define('Task', {
@@ -10,7 +11,7 @@ const Task = sequelize.define('Task', {
     },
     title: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
     descTask: {
         type: DataTypes.STRING,
