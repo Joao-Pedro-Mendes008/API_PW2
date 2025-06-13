@@ -17,11 +17,11 @@ exports.createTask = async (req, res) => {
             return res.status(404).json("Usuário não encontrado");
 
         }
-        const task = await Task.create({ title: title, description: description, userId: id });
+        const task = await Task.create({ title: title, descTask: description, userId: id });
 
         const taskToken = jwt.sign({ id: task.id, UserId: user.id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1h' });
 
-        return res.status(201).json(taskToken);
+        return res.status(201).json(`Tarefa criada com sucesso! Token de acesso: ${taskToken}`);
 
     } catch (error) {
         console.log();
